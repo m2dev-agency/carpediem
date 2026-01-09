@@ -4,6 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
+import { Preloader } from "@/components/Preloader";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -21,6 +23,8 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className={cn(inter.variable, playfair.variable, "font-sans bg-stone-950 text-stone-50 antialiased")}>
+        <Preloader />
+        <CustomCursor />
         <SmoothScroll>
           <NoiseOverlay />
           {children}

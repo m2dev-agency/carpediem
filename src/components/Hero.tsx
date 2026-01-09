@@ -6,6 +6,8 @@ import { useState, useRef } from "react";
 import { Modal } from "@/components/ui/modal";
 import { locations } from "@/data";
 
+import Magnetic from "@/components/ui/Magnetic";
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -82,15 +84,17 @@ export const Hero = () => {
           </motion.p>
           
           <motion.div variants={itemVariants}>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-white/10 px-8 py-4 text-lg font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 border border-white/10"
-            >
-              <span className="relative z-10">Trova il tuo tavolo</span>
-              <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-amber-600 transition-transform group-hover:rotate-45">
-                 <ArrowRight size={16} />
-              </div>
-            </button>
+            <Magnetic>
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-white/10 px-8 py-4 text-lg font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 border border-white/10"
+              >
+                <span className="relative z-10">Trova il tuo tavolo</span>
+                <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-amber-600 transition-transform group-hover:rotate-45">
+                   <ArrowRight size={16} />
+                </div>
+              </button>
+            </Magnetic>
           </motion.div>
         </motion.div>
       </div>

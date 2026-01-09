@@ -24,3 +24,23 @@ body {
     text-wrap: balance;
   }
 }
+
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
+  
+  a, button, [role="button"] {
+    cursor: none;
+  }
+}
+
+::selection {
+  background-color: #f59e0b; /* Amber 500 */
+  color: #0c0a09; /* Stone 950 */
+}
+
+.text-outline {
+  -webkit-text-stroke: 2px #0c0a09;
+  color: transparent;
+}
