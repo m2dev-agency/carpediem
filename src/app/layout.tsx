@@ -7,6 +7,9 @@ import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 import { Preloader } from "@/components/Preloader";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
@@ -21,10 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it">
+    <html lang="it" className="scroll-smooth">
       <body className={cn(inter.variable, playfair.variable, "font-sans bg-stone-950 text-stone-50 antialiased")}>
         <Preloader />
         <CustomCursor />
+        <Navbar />
         <SmoothScroll>
           <NoiseOverlay />
           {children}

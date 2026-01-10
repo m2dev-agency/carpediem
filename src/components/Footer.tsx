@@ -2,6 +2,7 @@
 
 import { Facebook, Instagram, Twitter, ArrowUp } from "lucide-react";
 import Magnetic from "@/components/ui/Magnetic";
+import Image from "next/image";
 
 export const Footer = () => {
   const socialLinks = [
@@ -27,7 +28,14 @@ export const Footer = () => {
         
         {/* Brand & Copyright */}
         <div className="text-center md:text-left">
-          <h3 className="mb-4 font-serif text-5xl font-bold text-white tracking-tight">Carpe Diem</h3>
+          <div className="mb-6 relative h-24 w-64 mx-auto md:mx-0">
+             <Image 
+               src="/assets/img/logo_bg_trasparente.png" 
+               alt="Carpe Diem Logo" 
+               fill
+               className="object-contain object-left"
+             />
+          </div>
           <p className="max-w-xs text-lg font-light text-stone-500">
              L'arte della pizza, elevata ad esperienza sensoriale.
           </p>

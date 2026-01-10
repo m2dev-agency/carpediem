@@ -10,14 +10,6 @@ import Image from "next/image";
 export const LocationsSection = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
-  // Placeholder images mapped to IDs for demo
-  const images = {
-    1: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop", // Restaurant interior
-    2: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop", // Cozy corner
-    3: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop", // Historic building
-    4: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1974&auto=format&fit=crop", // Seaside vibe
-  };
-
   return (
     <section className="relative bg-stone-950 py-32 text-white overflow-hidden">
       <div className="container mx-auto px-4">
@@ -78,7 +70,7 @@ export const LocationsSection = () => {
                   transition={{ duration: 0.6 }}
                >
                   <Image
-                    src={images[loc.id as keyof typeof images]} 
+                    src={loc.image} 
                     alt={loc.name}
                     fill
                     className="object-cover"
